@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Tetris</h1>
+        <div class="scoreboard">
+          <div>Score: <span id="score">0</span></div>
+          <div>Level: <span id="level">1</span></div>
+          <div>Lines: <span id="lines">0</span></div>
+        </div>
+      </header>
+      <main class="layout">
+        <canvas id="board" width="300" height="600" aria-label="Tetris board" role="img"></canvas>
+        <div class="sidebar">
+          <div class="next">
+            <h2>Next</h2>
+            <canvas id="next" width="120" height="120"></canvas>
+          </div>
+          <div class="hold">
+            <h2>Hold</h2>
+            <canvas id="hold" width="120" height="120"></canvas>
+          </div>
+          <div class="controls">
+            <h2>Controls</h2>
+            <ul>
+              <li>Left/Right: Move</li>
+              <li>Up/X: Rotate CW</li>
+              <li>Z: Rotate CCW</li>
+              <li>Space: Hard Drop</li>
+              <li>Down: Soft Drop</li>
+              <li>C/Shift: Hold</li>
+              <li>P: Pause</li>
+              <li>R: Restart</li>
+            </ul>
+          </div>
+          <button id="restart">Restart</button>
+        </div>
+      </main>
+      <footer>
+        <a href="https://en.wikipedia.org/wiki/Tetris" target="_blank" rel="noreferrer noopener">About Tetris</a>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

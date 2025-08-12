@@ -1,0 +1,76 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 10%, #0b1630, #050b1a 60%, #020612 100%);
+  color: #e6eefc;
+}
+
+.app { max-width: 920px; margin: 0 auto; padding: 16px; }
+header { display: flex; align-items: center; justify-content: space-between; }
+h1 { margin: 0; font-size: 32px; letter-spacing: 1px; }
+.scoreboard { display: flex; gap: 16px; opacity: 0.9; }
+
+.layout { display: grid; grid-template-columns: 1fr 280px; gap: 20px; align-items: start; }
+
+canvas#board {
+  background: #0a1226;
+  border: 2px solid #1f2a4d;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), inset 0 0 24px rgba(12, 45, 78, 0.4);
+}
+
+.sidebar { display: grid; gap: 16px; }
+.sidebar h2 { font-size: 16px; margin: 0 0 8px; opacity: 0.9; }
+.next, .hold {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.controls { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; }
+.controls ul { margin: 0; padding-left: 18px; }
+.controls li { margin: 4px 0; opacity: 0.9; }
+
+button#restart {
+  background: #3a66ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: transform 0.05s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 6px 20px rgba(58, 102, 255, 0.35);
+}
+button#restart:hover { background: #5a81ff; }
+button#restart:active { transform: translateY(1px); }
+
+footer { margin-top: 16px; opacity: 0.8; }
+footer a { color: #9db7ff; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* Piece colors */
+:root {
+  --I: #00f0f0; /* Cyan */
+  --J: #0000f0; /* Blue */
+  --L: #f0a000; /* Orange */
+  --O: #f0f000; /* Yellow */
+  --S: #00f000; /* Green */
+  --T: #a000f0; /* Purple */
+  --Z: #f00000; /* Red */
+  --ghost: rgba(255,255,255,0.15);
+}
+
+/* Utility to color cells if needed for debug */
+.cell-I { background: var(--I); }
+.cell-J { background: var(--J); }
+.cell-L { background: var(--L); }
+.cell-O { background: var(--O); }
+.cell-S { background: var(--S); }
+.cell-T { background: var(--T); }
+.cell-Z { background: var(--Z); }
+.cell-ghost { background: var(--ghost); }
